@@ -1,0 +1,84 @@
+tee table
+
+CREATE TABLE `tee` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `course_id` varchar(45) DEFAULT NULL,
+  `owner_faculty` varchar(45) DEFAULT NULL,
+  `assigned_faculty` varchar(45) DEFAULT NULL,
+  `is_reexam` varchar(45) DEFAULT NULL,
+  `org_tee_id` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `active` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+tee_criteria table
+
+CREATE TABLE `tee_criteria` (
+  `tee_id` varchar(45) DEFAULT NULL,
+  `criteria_desc` varchar(45) DEFAULT NULL,
+  `weightage` varchar(45) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mapping_desc` varchar(45) DEFAULT NULL,
+  `active` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+tee_cutoff table
+
+CREATE TABLE `tee_cutoff` (
+  `tee_id` int(11) DEFAULT NULL,
+  `cutoff_id` int(11) DEFAULT NULL,
+  `active` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+tee_marks table
+
+
+CREATE TABLE `tee_marks` (
+  `sap_id` varchar(25) DEFAULT NULL,
+  `id` varchar(45) DEFAULT NULL,
+  `criteria_1_marks` varchar(45) DEFAULT NULL,
+  `criteria_2_marks` varchar(45) DEFAULT NULL,
+  `criteria_3_marks` varchar(45) DEFAULT NULL,
+  `criteria_4_marks` varchar(45) DEFAULT NULL,
+  `criteria_5_marks` varchar(45) DEFAULT NULL,
+  `criteria_6_marks` varchar(45) DEFAULT NULL,
+  `criteria_7_marks` varchar(45) DEFAULT NULL,
+  `criteria_8_marks` varchar(45) DEFAULT NULL,
+  `criteria_9_marks` varchar(45) DEFAULT NULL,
+  `criteria_10_marks` varchar(45) DEFAULT NULL,
+  `weightage_1` varchar(45) DEFAULT NULL,
+  `weightage_2` varchar(45) DEFAULT NULL,
+  `weightage_3` varchar(45) DEFAULT NULL,
+  `weightage_4` varchar(45) DEFAULT NULL,
+  `weightage_5` varchar(45) DEFAULT NULL,
+  `weightage_6` varchar(45) DEFAULT NULL,
+  `weightage_7` varchar(45) DEFAULT NULL,
+  `weightage_8` varchar(45) DEFAULT NULL,
+  `weightage_9` varchar(45) DEFAULT NULL,
+  `weightage_10` varchar(45) DEFAULT NULL,
+  `active` varchar(45) DEFAULT NULL,
+  `assignment_id` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+tee_total table
+
+
+CREATE TABLE `tee_total` (
+  `sap_id` varchar(45) DEFAULT NULL,
+  `tee_id` varchar(45) DEFAULT NULL,
+  `tee_total` varchar(45) DEFAULT NULL,
+  `active` varchar(45) DEFAULT NULL,
+  `weighted_total` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
